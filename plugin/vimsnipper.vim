@@ -1,5 +1,5 @@
 "=============================================================================
-" vim-snippets.vim
+" vimsnipper.vim
 " Author: Nicolas Acquaviva <nicolaseacquaviva@gmail.com>
 "=============================================================================
 
@@ -13,14 +13,14 @@ function! ReadJson()
   try
     let json_file = readfile(g:snippets_file)
   catch /.*/
-    echo "vim-snippets Error: Error opening snippets file"
+    echo "vimsnipper Error: Error opening snippets file"
     return {}
   endtry
   try
     " vim8 and neovim support this function
     let json = json_decode(json_file)
   catch /.*/
-    echo "vim-snippets Error: Error decoding json file"
+    echo "vimsnipper Error: Error decoding json file"
     return {}
   endtry
 
@@ -44,4 +44,9 @@ function! GenerateCommands()
   endfor
 endfunction
 
-call GenerateCommands()
+if !exists('g:vim_snipper_loaded')
+  let g:vim_snipper_loaded = 1
+
+  call GenerateCommands()
+endif
+
