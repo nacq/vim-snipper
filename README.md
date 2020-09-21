@@ -7,12 +7,12 @@
 File with the defined snippets.
 
 ```vim
-let g:snippets_file = "/Users/nicolasacquaviva/vim-snippets.json"
+let g:snippets_file = $HOME . "/dotfiles/vim-snippets.json"
 ```
 
 ## Example snippets file
 
-The file need to be a json with the [following structure](https://raw.githubusercontent.com/nicolasacquaviva/vim-snipper/master/vim-snippets.example.json):
+The file needs to be a json with the [following structure](https://raw.githubusercontent.com/nicolasacquaviva/vim-snipper/master/vim-snippets.example.json):
 
 ```json
 {
