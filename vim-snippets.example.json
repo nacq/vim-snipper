@@ -1,0 +1,16 @@
+{
+  "ReactComponent": [
+    "import React from 'react';",
+    "",
+    "type Props = {};",
+    "",
+    "function Component({}: Props) {}",
+    "",
+    "export default Component;"
+  ],
+  "ReduxSelector": [
+    "import { State } from './State'",
+    "",
+    "export const selector = (state: State) => {};"
+  ]
+}
