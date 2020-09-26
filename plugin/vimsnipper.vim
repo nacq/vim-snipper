@@ -27,12 +27,21 @@ function! ReadJson()
   return json
 endfunction
 
+function! FormatSnippet(number_of_lines)
+  execute "normal dd"
+  execute "normal V" . a:number_of_lines . "j="
+endfunction
+
 function! Print(element_to_print)
   let json = ReadJson()
+  let lines = 0
 
   for element in reverse(json[a:element_to_print])
     call appendbufline(bufname(), GetCursorLine(), element)
+    let lines += 1
   endfor
+
+  call FormatSnippet(lines)
 endfunction
 
 function! GenerateCommands()
